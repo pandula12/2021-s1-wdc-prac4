@@ -11,6 +11,19 @@ var counter = 0;
 router.get('/color.html', function (req, res) {
   var color = "red";
   counter++;
+  if (counter==1) {
+    color = "red";
+  }
+  else if (counter==2) {
+    color = "yellow";
+  }
+  else if (counter==3) {
+    color = "green";
+  }
+  else if (counter==4) {
+    color = "blue";
+    counter = 0;
+  }
   res.send(`
   <!DOCTYPE html>
 <html lang="en">
