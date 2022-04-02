@@ -40,6 +40,27 @@ router.get('/color.html', function (req, res) {
 </html>`);
 });
 
-
+var i = 0;
+var log = ["placeholder"];
+router.get('/log.html', function(req, res){
+  let visit = new Date().toLocaleString();
+  log[i] = `<li>${visit}</li>`;
+  let visit_log = log.join('');
+  i++;
+  res.send(`<!DOCTYPE html>
+  <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <title>
+              log
+          </title>
+      </head>
+          <body>
+              <ul>
+                ${visit_log}
+              </ul>
+          </body>
+  </html>`)
+});
 
 module.exports = router;
