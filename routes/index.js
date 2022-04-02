@@ -59,7 +59,42 @@ router.get('/log.html', function(req, res){
                  ${visit_log} 
               </ul>
           </body>
-  </html>`)
+  </html>`);
+});
+
+var visited = false;
+router.get('/first.html', function(req, res){
+  if (visited) {
+    return res.redirect('/main.html');
+  }
+  visited = true;
+  return res.send(`<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>first</title>
+        </head>
+        <body>
+            <h1><a href="/main.html">Welcome</a></h1>
+        </body>
+    </html>`);
+});
+
+router.get('/main.html', function(req, res){
+  if (!visited) {
+    return res.redirect('/first.html');
+  }
+  return res.send(`<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>main</title>
+        </head>
+        <body>
+            <h1>My main site</h1>
+            <p>Random Random Random</p>
+        </body>
+    </html>`);
 });
 
 module.exports = router;
