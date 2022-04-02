@@ -24,20 +24,19 @@ router.get('/color.html', function (req, res) {
     color = "blue";
     counter = 0;
   }
-  res.send(`
-  <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="/stylesheets/style.css">
-        <title>
-            color
-        </title>
-    </head>
-    <body>
-        <h1 class = "${color}">${color}</h1>
-    </body>
-</html>`);
+  res.send(`<!DOCTYPE html>
+  <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <link rel="stylesheet" href="/stylesheets/style.css">
+          <title>
+              color
+          </title>
+      </head>
+      <body>
+          <h1 class = "${color}">${color}</h1>
+      </body>
+  </html>`);
 });
 
 var i = 0;
@@ -57,7 +56,7 @@ router.get('/log.html', function(req, res){
       </head>
           <body>
               <ul>
-                ${visit_log}
+                 ${visit_log} 
               </ul>
           </body>
   </html>`)
